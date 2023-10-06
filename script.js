@@ -56,4 +56,4 @@ function getComputerChoice () {
 
 //calls the get computer choice fxn so the computer can select a random choice
 const computerSelection = getComputerChoice();
-alert(playRound(playerSelection, computerSelection));
+alert(playRound(playerSelection, getComputerChoice()));
