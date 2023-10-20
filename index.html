@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     
-    <script src="script.js"></script>
+    
 
     <div class="navbar">
 
@@ -19,27 +20,28 @@
 
     <div>
 
-        <h1>Choose your weapon!</h1>
+        <h1>CHOOSE YOUR WEAPON!</h1>
 
         <div id="container">
 
-        <div id="c1">
-           <img src="images/rock.png" alt="rock image">
+        <div id="rock">
+            <div><img src="images/rock.png" alt="Rock" class="choice" onclick="playRound('Rock', getComputerChoice())"></div>
+            <p>ROCK</p>
         </div>
 
-        <div id="c2">
-            <img src="images/paper.png" alt="paper image">
+        <div id="paper">
+            <div><img src="images/paper.png" alt="Paper" class="choice" onclick="playRound('Paper', getComputerChoice())"></div>
+            <p>PAPER</p>
         </div>
 
-        <div id="c3">
-            <img src="images/scissors.png" alt="scissors image">
+        <div id="scissors">
+            <div><img src="images/scissors.png" alt="Scissors" class="choice" onclick="playRound('Scissors', getComputerChoice())"></div>
+            <P>SCISSORS</P>
         </div>
     
         </div>
 
     </div>
-
-    
 
 </body>
 </html>
