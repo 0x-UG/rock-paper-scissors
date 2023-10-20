@@ -1,44 +1,68 @@
 function playRound(playerSelection, computerSelection) {
+  let resultMessage;
 
-      if (playerSelection === "Rock") {
-      if (computerSelection === "Rock") {
-        alert("This is a tie, no winners here! You both picked Rock");
-      } else if (computerSelection === "Paper") {
-        alert("Computer wins! Paper covers Rock");
-      } else if (computerSelection === "Scissors") {
-        alert("Player wins! Rock breaks Scissors");
-      } else {
-        alert("Invalid computer selection.");
+  switch (playerSelection) {
+    case "Rock":
+      switch (computerSelection) {
+        case "Rock":
+          resultMessage = "This is a tie, no winners here! You both picked Rock";
+          break;
+        case "Paper":
+          resultMessage = "Computer wins! Paper covers Rock";
+          break;
+        case "Scissors":
+          resultMessage = "Player wins! Rock breaks Scissors";
+          break;
+        default:
+          resultMessage = "Invalid computer selection.";
+          break;
       }
-    } else if (playerSelection === "Paper") {
-      if (computerSelection === "Rock") {
-        alert("Player wins! Paper covers Rock");
-      } else if (computerSelection === "Paper") {
-        alert("This is a tie, no winners here! You both picked Paper");
-      } else if (computerSelection === "Scissors") {
-        alert("Computer Wins! Scissors cuts Paper");
-      } else {
-        alert("Invalid computer selection.");
+      break;
+
+    case "Paper":
+      switch (computerSelection) {
+        case "Rock":
+          resultMessage = "Player wins! Paper covers Rock";
+          break;
+        case "Paper":
+          resultMessage = "This is a tie, no winners here! You both picked Paper";
+          break;
+        case "Scissors":
+          resultMessage = "Computer Wins! Scissors cuts Paper";
+          break;
+        default:
+          resultMessage = "Invalid computer selection.";
+          break;
       }
-    } else if (playerSelection === "Scissors") {
-      if (computerSelection === "Rock") {
-        alert("Computer Wins! Rock breaks Scissors");
-      } else if (computerSelection === "Paper") {
-        alert("Player wins! Scissors cuts Paper");
-      } else if (computerSelection === "Scissors") {
-        alert("This is a tie, no winners here! You both picked Scissors");
-      } else {
-        alert("Invalid computer selection.");
+      break;
+
+    case "Scissors":
+      switch (computerSelection) {
+        case "Rock":
+          resultMessage = "Computer Wins! Rock breaks Scissors";
+          break;
+        case "Paper":
+          resultMessage = "Player wins! Scissors cuts Paper";
+          break;
+        case "Scissors":
+          resultMessage = "This is a tie, no winners here! You both picked Scissors";
+          break;
+        default:
+          resultMessage = "Invalid computer selection.";
+          break;
       }
-    } else {
-      alert("Invalid player selection.");
-    }
+      break;
+
+    default:
+      resultMessage = "Invalid player selection.";
+      break;
   }
-  
-
+return resultMessage;
+}
 
 //code to ask user to input string between rock paper and scissors
 let playerInput = prompt("Pick one between rock, paper and scissors: ");
+
 //code to make player selection upper case only at the first letter to compare with the computer choice
 let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
 
@@ -56,4 +80,6 @@ function getComputerChoice () {
 
 //calls the get computer choice fxn so the computer can select a random choice
 const computerSelection = getComputerChoice();
-alert(playRound(playerSelection, getComputerChoice()));
+
+const game = playRound(playerSelection, computerSelection);
+alert (game);
